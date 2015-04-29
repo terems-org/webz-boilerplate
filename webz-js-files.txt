@@ -1,4 +1,4 @@
 webz-js-files/handlebars-v3.0.0.js
 webz-js-files/marked.js
-webz-js-files/user-extendable.js
+webz-js-files/user-extensions.js
 webz-js-files/serverside-renderer.js
