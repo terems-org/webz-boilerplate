@@ -4,6 +4,7 @@ var indexTemplate = null;
 var webzInit = function(webzFiles) {
 	indexTemplate = Handlebars.compile(webzFiles.getFile("/index.html").getFileDownloader().getContentAsStringAndClose());
 	Handlebars.registerPartial("index.hbs", webzFiles.getFile("/app/templates/index.hbs").getFileDownloader().getContentAsStringAndClose());
+	Handlebars.registerPartial("end-of-body.hbs", webzFiles.getFile("/app/templates/end-of-body.hbs").getFileDownloader().getContentAsStringAndClose());
 	indexTemplate({}); // for some reason this does some kind of template initialization (which otherwise happens upon first pageload)
 };
 
@@ -25,7 +26,7 @@ var webzPreparePageContext = function(webzContext, fullUrl) {
 
 var webzRenderPage = function(pageContext) {
 	var webzMainContent = pageContext['WEBZ-MAIN-CONTENT'];
-	if (webzMainContent) {		
+	if (webzMainContent) {
 		pageContext['WEBZ-MAIN-CONTENT'] = marked(webzMainContent);
 	}
 	return indexTemplate(pageContext);
