@@ -1,3 +1,5 @@
+
 webz-js-files/handlebars-v3.0.0.js
 webz-js-files/marked.js
+webz-js-files/jquery.extend.js
 webz-js-files/serverside-renderer.js
